@@ -11,12 +11,13 @@ const getAllUser = (req,res)=>{
         res.send(accounts)
 }
 const getAccount=(req,res)=>{
-    const foundUser=accounts.filter((rlem,i)=>{
-        return i == req.params.id
+    const{email,password}= req.body;
+    const foundUser=accounts.find((elem)=>{
+        return (elem.email==email && elem.password==password) 
+          console.log(foundUser);
     })
-    if (foundUser.length>0){
-        req.send(foundUser[0])
-        return
+    if (foundUser){
+        res.send(foundUser)
     } 
     res.status(404).send('can not find the user!!')      
 }

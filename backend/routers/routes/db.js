@@ -1,21 +1,20 @@
 const accounts=[{
+    id:1,
     email:"fawzi@gmail.com",
     userName:"Fawzi",
-    password:"Ff123123",
-    id:1
+    password:"Ff123123"
 },
 {
     email:"yousef@gmail.com",
     userName:"Yousef",
-    password:"Aa123123",
-    id:2
+    password:"Aa123123"
 
 },
 {
     email:"assad@gmail.com",
     userName:"Assad",
-    password:"Ff123123",
-    id:3
+    password:"Ff123123"
+    
 }
 
 ]

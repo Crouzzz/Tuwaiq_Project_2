@@ -6,7 +6,7 @@ const {accountsts}=require('../routes/db')
 
 
 userRouter.get('/',getAllUser);
-userRouter.get('/:id',getAccount);
+userRouter.post('/',getAccount);
 userRouter.post('/user',addAcount);
 userRouter.put('/user',updateAccount);
 
