@@ -22,8 +22,10 @@ const getAccount=(req,res)=>{
 }
 const addAcount=(req,res)=>{
     const newAccount={
-        username:req.body.username,
-        password:req.body.password
+        userName:req.body.userName,
+        password:req.body.password,
+        email:req.body.email,
+        id:req.body.id
     }
     accounts.push(newAccount)
     res.send(201).send(newAccount);
@@ -32,7 +34,8 @@ const addAcount=(req,res)=>{
 const updateAccount=(req,res)=>{
  const idUser=req.query.id.forEach((elem,i)=>{
      if(i== id){
-         elem.username=req.body.usernameelem.password=req.body.password
+         elem.userName=req.body.userName
+         elem.password=req.body.password
      }
  })
 }
