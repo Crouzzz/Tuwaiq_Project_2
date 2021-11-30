@@ -2,12 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
-import Signup from "../signup/singup";
+import Login from "../login/login";
 // import "./login.css";
 
-function Login() {
+ function Signup() {
   const [nationalID, setNationalid] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -15,24 +16,25 @@ function Login() {
     const data = {
       nationalID: nationalID,
       password: password,
+      userName: userName,
     };
-    // console.log(data);
+    
+    console.log(
+      data
+    );
     axios
-      .post("/user/login/", {
-        nationalID: nationalID,
-        password: password,
-      })
+      .post("http://localhost:5005/user/user", 
+        data,
+      )
       .then((res) => {
         console.log(res);
-        console.log(res.data.nationalID);
-        sessionStorage.setItem("userId",res.data.id);
-
-        navigate("/nextMain", { state: { id: res.data.id } });
-        // navigate("/Dashbord", {state:{ id: res.data.id} });
+        console.log(res.data);
+        navigate("/login");
+        // window.location.href = '/Main';
       })
       .catch((err) => {
         console.log(err);
-       alert("National id or Password wrong !")
+
         console.log("Password or User name are Wrong");
       });
   }
@@ -53,23 +55,32 @@ function Login() {
               <div className="col">Login</div>
               <div className="col">
                 {" "}
-                <Link to="/signup" id="link">
-                  sing up{" "}
-                </Link>{" "}
+                <Link to="/login" id="link">log in </Link>{" "}
               </div>{" "}
             </div>
-            <Form
-              onSubmit={(e) => {
-                handleSubmit(e);
-              }}
-            >
-              <Form.Group className="mb-3" controlId="">
-                <Form.Label> Enter Your National ID </Form.Label>
+            <Form onSubmit={(e) => {
+                  handleSubmit(e);
+                }}>
+              <Form.Group
+                className="mb-3"
+                controlId=""
+                
+              >
+                <Form.Label> Enter your National no </Form.Label>
                 <Form.Control
                   type="id"
-                  placeholder="Enter national no"
+                  placeholder="Enter National no"
                   onChange={(event) => {
                     setNationalid(event.target.value);
+                  }}
+                />
+                <Form.Text className="text-muted"></Form.Text>
+                <Form.Label> Enter your username </Form.Label>
+                <Form.Control
+                  type="id"
+                  placeholder="Enter username"
+                  onChange={(event) => {
+                    setUserName(event.target.value);
                   }}
                 />
                 <Form.Text className="text-muted"></Form.Text>
@@ -79,6 +90,7 @@ function Login() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
+                  
                   placeholder="Password"
                   onChange={(event) => {
                     setPassword(event.target.value);
@@ -88,7 +100,7 @@ function Login() {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <Button variant="primary"  type="submit">
                 LogIn
               </Button>
             </Form>
@@ -99,4 +111,4 @@ function Login() {
     </div>
   );
 }
-export default Login;
+export default Signup

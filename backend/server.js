@@ -11,7 +11,7 @@ app.use(express.json());
 
 
 //third-party middleware
-// app.use(cors());
+app.use(cors());
 app.use('/user',userRouter)
 //app routers
 // app.get('/',function(req,res){
@@ -23,3 +23,4 @@ const PORT = process.env.PORT || 5005;
 app.listen(PORT, () => {
 	console.log(`Server On ${PORT}`);
 });
+// console.log(global);

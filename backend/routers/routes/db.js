@@ -1,19 +1,105 @@
 const accounts=[{
     id:1,
-    email:"fawzi@gmail.com",
-    userName:"Fawzi",
-    password:"Ff123123"
+    nationalID:"11111",
+    userName:"fawzi",
+    password:"11111",
+    adminstrature:'Fawzi Dahamsheh',
+    cars:1,
+    drivingLicense:{
+        releaseDate:'10/1/2020',
+        expiryDate:'10/10/2022',
+        count:1,
+    },
+    trafficViola:0,
+    passport:{
+        number:'',
+        releaseDate:'',
+        expiryDate:'',
+        releasePlace:'',
+        count:0
+    },
+    vehiclelnsurances:'1',
+    appointment:'Unavailable',
+    NationalAddress:'Riyadh',
+    MyDeeds:"Unavailable",
+    Attorneys:"Unavailable",
+    qiyas:{
+        count:"2",
+        theory:"80",
+        quantitative:"75"
+    },
+    Internationaltravel:"Unavailable",
+    CommercialRegistrations:'empty'
 },
+
+
 {
-    email:"yousef@gmail.com",
-    userName:"Yousef",
-    password:"Aa123123"
+    id:2,
+    nationalID:"12121",
+    userName:"Yousef Ali ",
+    password:"Aa123123",
+    adminstrature:'Yousef',
+    cars:1,
+    drivingLicense:{
+        releaseDate:'5/1/2018',
+        expiryDate:'10/12/2021',
+        count:1,
+    },
+    TrafficViola:5,
+    passport:{
+        number:'101010',
+        releaseDate:'2020',
+        expiryDate:'2022',
+        releasePlace:'Espain',
+        count:1
+    },
+    vehiclelnsurances:'2',
+    appointment:'Unavailable',
+    NationalAddress:'Najran',
+    MyDeeds:"Unavailable",
+    Attorneys:"Unavailable",
+    qiyas:{
+        count:"2",
+        theory:"85",
+        quantitative:"70"
+    },
+    Internationaltravel:"Unavailable",
+    CommercialRegistrations:'empty'
 
 },
 {
-    email:"assad@gmail.com",
+    id:3,
+    nationalID:"12345",
     userName:"Assad",
-    password:"Ff123123"
+    password:"Ff123123",
+    adminstrature:'Assad Mohammad',
+    cars:1,
+    drivingLicense:{
+        releaseDate:'',
+        expiryDate:'',
+        count:0,
+    },
+    TrafficViola:0,
+    passport:{
+        number:'',
+        releaseDate:'',
+        expiryDate:'',
+        releasePlace:'',
+        count:0
+    },
+    vehiclelnsurances:'1',
+    appointment:'Unavailable',
+    NationalAddress:'Abha',
+    MyDeeds:"Unavailable",
+    Attorneys:"Unavailable",
+    qiyas:{
+        count:"2",
+        theory:"90",
+        quantitative:"95"
+    },
+    Internationaltravel:"Unavailable",
+    CommercialRegistrations:'empty'
+
     
 }
 
