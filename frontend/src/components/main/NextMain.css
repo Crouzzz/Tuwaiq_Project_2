@@ -19,3 +19,17 @@
 background-color: rgb(81, 207, 230)
     !important;
 }
+#carddd{
+    text-align: center;
+    width:35rem;
+}
+#carddd2{
+    justify-content: left;
+    width: 20rem;
+    background-color: #1b5e20;
+    border-radius: 5px;
+    margin-left: 130px;
+}
+#img_main{
+    width: 5rem;
+}

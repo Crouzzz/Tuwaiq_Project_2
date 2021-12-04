@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import Login from "../login/login";
-// import "./login.css";
-
  function Signup() {
   const [nationalID, setNationalid] = useState("");
   const [password, setPassword] = useState("");
@@ -30,7 +28,7 @@ import Login from "../login/login";
         console.log(res);
         console.log(res.data);
         navigate("/login");
-        // window.location.href = '/Main';
+        
       })
       .catch((err) => {
         console.log(err);

@@ -23,12 +23,12 @@ function Login() {
         password: password,
       })
       .then((res) => {
-        console.log(res);
-        console.log(res.data.nationalID);
+        // console.log(res);
+        // console.log(res.data.nationalID);
         sessionStorage.setItem("userId",res.data.id);
 
         navigate("/nextMain", { state: { id: res.data.id } });
-        // navigate("/Dashbord", {state:{ id: res.data.id} });
+
       })
       .catch((err) => {
         console.log(err);

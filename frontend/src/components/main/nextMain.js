@@ -31,13 +31,9 @@ function NextMain() {
 
   const { state } = useLocation();
   const uID = sessionStorage.getItem("userId");
-  console.log("userID",uID);
-  const UserName = state.userName;
-  const nationalID = state.nationalID;
-  // nationalID = sessionStorage.getItem("userId");
+
   const [data, setData] = useState([]);
-  const [drivingLicense, setDrivingLicense] = useState({});
-  //  const []
+  const [drivingLicense, setDrivingLicense] = useState({}); 
   const navigate = useNavigate();
   useEffect(() => {
     axios({
@@ -50,7 +46,7 @@ function NextMain() {
       .then((res) => {
         setData(res.data);
         setDrivingLicense(res.data.drivingLicense);
-        // navigate("/Dashboard", {state:{ id: data.id} });
+        
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -92,11 +88,9 @@ function NextMain() {
                   <Nav.Link className="navItem">Permits</Nav.Link>
                   <Nav.Link className="navItem">Reports</Nav.Link>
                   <Nav.Link className="navItem">Notifications</Nav.Link>
-                  {/* <Link to="/Dashboard" id="link"> */}
                   <Nav.Link className="navItem" href="/Dashboard">
-                    Dashboard {/* navigate("/Dashboard", state:{id:data.id}) */}
+                    Dashboard 
                   </Nav.Link>
-                  {/* </Link> */}
                   <Nav.Link className="navItem" href="#action2">
                     Oran Donation
                   </Nav.Link>
@@ -105,7 +99,8 @@ function NextMain() {
             </Navbar.Offcanvas>
           </Navbar></Col>
          
-    <Col xs={6} >  <Card style={{textAlign:"center", width: "35rem" }}>
+    <Col xs={6} > 
+     <Card id='carddd' >
             <ListGroup variant="flush">
               
               <h6>Name: {data.userName}</h6>
@@ -116,25 +111,16 @@ function NextMain() {
             </ListGroup>
           </Card></Col>
     <Col>
-    <Card
-              style={{
-                justifyContent: "left",
-                width: "20rem",
-                backgroundColor: "#1b5e20",
-                borderRadius: "5px",
-                marginLeft: "130px",
-              }}
+    <Card id="carddd2"
             >
               <Card.Img
                 variant="top"
-                style={{ width: "5rem" }}
                 src="https://3.bp.blogspot.com/-E8vdU98Meoc/VHqLBjQ6WPI/AAAAAAAABoI/RTJVpcl2ZAM/s640/%D8%AA%D9%86%D8%B2%D9%8A%D9%84.png"
               />
               <Card.Body>
                 <Card.Title>
                   <h6 class="text-light mb-2 mt-1 ">Immune</h6>
                 </Card.Title>
-                {/* <Card.Text> <h6> last update:{date}</h6> </Card.Text> */}
                 <Card.Text>
                   {" "}
                   <h6 class="text-light mb-1 font-weight-light">
